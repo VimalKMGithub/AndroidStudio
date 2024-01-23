@@ -32,6 +32,11 @@ class MainActivity : AppCompatActivity() {
                 true
             }
 
+            R.id.exit -> {
+                finish()
+                true
+            }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
