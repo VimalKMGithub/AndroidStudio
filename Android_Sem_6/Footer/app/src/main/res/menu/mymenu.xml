@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <item-->
+<!--        android:id="@+id/search"-->
+<!--        android:title="Search"-->
+<!--        android:icon="@drawable/search"-->
+<!--        android:orderInCategory="2"-->
+<!--        />-->
+<!--    <item-->
+<!--        android:id="@+id/home"-->
+<!--        android:title="Home"-->
+<!--        android:orderInCategory="3"-->
+<!--        />-->
+<!--    <item-->
+<!--        android:id="@+id/setting"-->
+<!--        android:title="Settings"-->
+<!--        android:icon="@drawable/settings"-->
+<!--        android:orderInCategory="4"-->
+<!--        />-->
+<!--    <item-->
+<!--        android:id="@+id/exit"-->
+<!--        android:title="Exit"-->
+<!--        android:orderInCategory="5"-->
+<!--        />-->
+</menu>
