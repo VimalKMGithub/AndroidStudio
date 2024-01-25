@@ -11,13 +11,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         nv=findViewById(R.id.nav_bar)
-//        nv.setOnItemSelectedListener { menuItem->
-//            when(menuItem.itemId){
-//                R.id.home->{
-//                    Toast.makeText(this,"Home",Toast.LENGTH_LONG).show()
-//
-//                }
-//            }
-//        }
+        nv.setOnItemSelectedListener { menuItem->
+            when(menuItem.itemId){
+                R.id.home->{
+                    Toast.makeText(this,"Home",Toast.LENGTH_LONG).show()
+                    true
+                }
+                R.id.setting->{
+                    Toast.makeText(this,"action",Toast.LENGTH_LONG).show()
+                    true
+                }
+                R.id.search->{
+                    Toast.makeText(this,"search",Toast.LENGTH_LONG).show()
+                    true
+                }
+                R.id.exit->{
+                    finish()
+                    false
+                }
+
+                else -> {
+                    false
+                }
+            }
+        }
     }
 }
