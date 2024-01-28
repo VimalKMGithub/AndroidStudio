@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.bottom_navigation"
+    namespace = "com.example.bottom_navigation_2"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.bottom_navigation"
+        applicationId = "com.example.bottom_navigation_2"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -25,9 +25,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-    buildFeatures{
-        viewBinding = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
