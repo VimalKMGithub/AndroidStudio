@@ -14,16 +14,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-val btnToast=findViewById<Button>(R.id.btnClick)
-        btnToast.setOnClickListener{
-            val vg:ViewGroup?=findViewById(R.id.my_viewgroup)
-            val inflater=layoutInflater
-            val layout:View=inflater.inflate(R.layout.custom_toast,vg)
-            val tv=layout.findViewById<TextView>(R.id.custom_toast_message)
-            tv.text="My Message"
-            val toast=Toast(applicationContext)
-            toast.setGravity(Gravity.CENTER_VERTICAL,0,100)
-            toast.duration=Toast.LENGTH_LONG
+        val btnToast = findViewById<Button>(R.id.btnClick)
+        btnToast.setOnClickListener {
+            val vg: ViewGroup? = findViewById(R.id.my_viewgroup)
+            val inflater = layoutInflater
+            val layout: View = inflater.inflate(R.layout.custom_toast, vg)
+            val tv = layout.findViewById<TextView>(R.id.custom_toast_message)
+            tv.text = "My Message"
+            val toast = Toast(applicationContext)
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 100)
+            toast.duration = Toast.LENGTH_LONG
             toast.setView(layout)
             toast.show()
         }
