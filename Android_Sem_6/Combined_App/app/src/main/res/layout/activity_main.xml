@@ -13,7 +13,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@drawable/nav_shape"
         app:itemTextColor="@drawable/item_text"
-        app:menu="@menu/head_view"/>
+        app:menu="@menu/head_view" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnView"
@@ -22,5 +22,14 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/bnv_shape"
         app:itemTextColor="@drawable/item_text"
-        app:menu="@menu/bn_view"/>
+        app:menu="@menu/bn_view" />
+
+    <Button
+        android:id="@+id/btnClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click Me"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+
 </RelativeLayout>
