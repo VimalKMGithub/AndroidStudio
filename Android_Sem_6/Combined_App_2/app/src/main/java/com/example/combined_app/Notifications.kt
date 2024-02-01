@@ -28,7 +28,7 @@ class Notifications : AppCompatActivity() {
                 }
 
                 R.id.exit -> {
-                    finish()
+                    finishAffinity()
                 }
             }
             true

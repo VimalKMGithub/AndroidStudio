@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -14,6 +13,7 @@ class Notifications : AppCompatActivity() {
         setContentView(R.layout.activity_notifications)
 
         val toolbar = findViewById<Toolbar>(R.id.nav)
+        toolbar.title="Notifications"
         setSupportActionBar(toolbar)
 
         val bnv = findViewById<BottomNavigationView>(R.id.bnView)
@@ -28,7 +28,7 @@ class Notifications : AppCompatActivity() {
                 }
 
                 R.id.exit -> {
-                    finish()
+                    finishAffinity()
                 }
             }
             true

@@ -8,27 +8,25 @@ import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class Notifications : AppCompatActivity() {
+class Settings : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_notifications)
+        setContentView(R.layout.activity_settings)
 
         val toolbar = findViewById<Toolbar>(R.id.nav)
+        toolbar.title="Settings"
         setSupportActionBar(toolbar)
 
         val bnv = findViewById<BottomNavigationView>(R.id.bnView)
+        bnv.selectedItemId=R.id.settings
         bnv.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.home -> {
-                    startActivity(Intent(this, MainActivity::class.java))
-                }
-
-                R.id.settings -> {
-                    startActivity(Intent(this, Settings::class.java))
+                R.id.home->{
+                    startActivity(Intent(this,MainActivity::class.java))
                 }
 
                 R.id.exit -> {
-                    finish()
+                    finishAffinity()
                 }
             }
             true
@@ -37,5 +35,15 @@ class Notifications : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.head_view, menu)
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.notifications -> {
+                startActivity(Intent(this,Notifications::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
