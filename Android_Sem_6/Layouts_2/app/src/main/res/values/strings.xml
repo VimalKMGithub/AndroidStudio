@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Layouts</string>
+    <string name="Send">Send</string>
+    <string name="to">to</string>
+    <string name="from">from</string>
+    <string name="message">Message</string>
+</resources>
