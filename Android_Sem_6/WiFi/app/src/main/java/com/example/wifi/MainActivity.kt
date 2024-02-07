@@ -1,10 +1,13 @@
 package com.example.wifi
 
+import android.content.pm.PackageManager
 import android.net.wifi.WifiManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
     var enableWife: Button? = null
@@ -24,5 +27,19 @@ class MainActivity : AppCompatActivity() {
             val wife = getSystemService(WIFI_SERVICE) as WifiManager
             wife.setWifiEnabled(false)
         }
+    }
+    private fun checkPermission():Boolean{
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.CHANGE_WIFI_STATE)==PackageManager.PERMISSION_GRANTED
+    }
+    private fun requestPermission(){
+        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CHANGE_WIFI_STATE),REQUEST_CODE_WIFI_PERMISSION)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 }
