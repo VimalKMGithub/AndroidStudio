@@ -59,7 +59,11 @@ class Home : Fragment() {
                 calculateBtn.visibility = View.GONE
 
             } else {
-                Toast.makeText(requireContext(), "Please enter valid height and weight", Toast.LENGTH_SHORT)
+                Toast.makeText(
+                    requireContext(),
+                    "Please enter valid height and weight",
+                    Toast.LENGTH_SHORT
+                )
                     .show()
             }
         }

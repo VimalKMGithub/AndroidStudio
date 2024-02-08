@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         toolbar = findViewById(R.id.toolbar)
+        toolbar.title = "Home"
         setSupportActionBar(toolbar)
 
         bnView = findViewById(R.id.bnView)
@@ -23,11 +24,13 @@ class MainActivity : AppCompatActivity() {
         bnView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.home -> {
+                    toolbar.title = "Home"
                     replaceFragment(Home())
                     true
                 }
 
                 R.id.rating -> {
+                    toolbar.title = "Rating"
                     replaceFragment(Rating())
                     true
                 }
@@ -47,9 +50,11 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.notifications -> {
+                toolbar.title = "Notifications"
                 replaceFragment(Notifications())
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }
