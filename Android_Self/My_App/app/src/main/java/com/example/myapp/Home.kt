@@ -1,10 +1,12 @@
 package com.example.myapp
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -35,6 +37,7 @@ class Home : Fragment() {
 
         calculateBtn.setOnClickListener {
             if (etHeight.text.isNotEmpty() && etWeight.text.isNotEmpty()) {
+                hideKeyboard()
                 val height = etHeight.text.toString().toInt()
                 val weight = etWeight.text.toString().toInt()
                 val bmi = calculateBMI(height, weight)
@@ -89,5 +92,13 @@ class Home : Fragment() {
     private fun calculateBMI(height: Int, weight: Int): Float {
         val heightInMeter = height.toFloat() / 100
         return weight.toFloat() / (heightInMeter * heightInMeter)
+    }
+
+    private fun hideKeyboard() {
+        val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val view: View? = activity?.currentFocus
+        view?.let {
+            imm.hideSoftInputFromWindow(it.windowToken, 0)
+        }
     }
 }

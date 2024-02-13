@@ -34,7 +34,8 @@
             android:layout_height="50dp"
             android:layout_below="@id/weightLabel_tv"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:inputType="number"/>
         <TextView
             android:id="@+id/heightLabel_tv"
             android:layout_width="wrap_content"
@@ -52,7 +53,8 @@
             android:layout_below="@id/heightLabel_tv"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:inputType="number"/>
         <Button
             android:id="@+id/calculate_btn"
             android:layout_width="wrap_content"
