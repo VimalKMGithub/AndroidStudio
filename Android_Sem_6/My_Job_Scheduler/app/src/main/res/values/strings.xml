@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Job Scheduler</string>
+    <string name="b1"> Start Job </string>
+    <string name="b2"> Stop Job </string>
+</resources>
