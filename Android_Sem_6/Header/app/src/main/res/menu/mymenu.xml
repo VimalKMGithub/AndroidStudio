@@ -4,34 +4,30 @@
 
     <item
         android:id="@+id/search"
-        android:title="Search"
         android:icon="@drawable/search"
-        app:showAsAction="ifRoom|collapseActionView"
-        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+        android:title="Search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
     <item
         android:id="@+id/action_settings"
-        android:title="Settings"
         android:icon="@drawable/settings"
-        app:showAsAction="ifRoom|collapseActionView"/>
+        android:title="Settings"
+        app:showAsAction="ifRoom|collapseActionView" />
     <item
         android:id="@+id/add"
-        android:title="Add item"
         android:orderInCategory="1"
-        />
+        android:title="Add item" />
     <item
         android:id="@+id/list_item"
-        android:title="List of items"
         android:orderInCategory="2"
-        />
+        android:title="List of items" />
     <item
         android:id="@+id/share"
-        android:title="Share"
         android:orderInCategory="3"
-        />
+        android:title="Share" />
     <item
         android:id="@+id/exit"
-        android:title="Exit"
         android:orderInCategory="100"
-        />
+        android:title="Exit" />
 
 </menu>
