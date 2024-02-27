@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/tvWelcome"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome"
         android:layout_margin="20dp"
@@ -18,8 +18,7 @@
         android:layout_gravity="center"/>
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Thsese are your details from our DataBase"
         android:layout_margin="20dp"
@@ -27,18 +26,20 @@
         android:textSize="15dp"
         android:layout_gravity="center"/>
 
-    <Button
-        android:id="@+id/btnMail"
+    <TextView
+        android:id="@+id/tvMail"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:textSize="20dp"
         android:text="Mail" />
 
-    <Button
-        android:id="@+id/btnUnique"
+    <TextView
+        android:id="@+id/tvUnique"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
         android:text="Unique Id" />
 </LinearLayout>

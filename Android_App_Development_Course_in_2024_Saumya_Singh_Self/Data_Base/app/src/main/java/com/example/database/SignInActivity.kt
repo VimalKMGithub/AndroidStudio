@@ -14,7 +14,9 @@ class SignInActivity : AppCompatActivity() {
     private lateinit var databaseReference: DatabaseReference
 
     companion object {
-        const val KEY = "com.example.database.SignInActivity.KEY"
+        const val KEY1 = "com.example.database.SignInActivity.mail"
+        const val KEY2 = "com.example.database.SignInActivity.name"
+        const val KEY3 = "com.example.database.SignInActivity.id"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +46,9 @@ class SignInActivity : AppCompatActivity() {
                 val userId = it.child("uniqueId").value
 
                 val intentWelcome = Intent(this, WelcomeActivity::class.java)
-//                intentWelcome.putExtra(KEY,)
+                intentWelcome.putExtra(KEY1, email.toString())
+                intentWelcome.putExtra(KEY2, name.toString())
+                intentWelcome.putExtra(KEY3, userId.toString())
                 startActivity(intentWelcome)
             } else {
                 Toast.makeText(this, "User does not exist", Toast.LENGTH_SHORT).show()

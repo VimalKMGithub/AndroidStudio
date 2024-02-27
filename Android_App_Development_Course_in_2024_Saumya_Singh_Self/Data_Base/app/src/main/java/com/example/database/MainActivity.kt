@@ -1,8 +1,10 @@
 package com.example.database
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.DatabaseReference
@@ -45,6 +47,12 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+
+        val signInText = findViewById<TextView>(R.id.tvSign)
+        signInText.setOnClickListener {
+            val openSignInActivity = Intent(this, SignInActivity::class.java)
+            startActivity(openSignInActivity)
         }
     }
 }
