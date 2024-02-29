@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">StaticFragment</string>
+    <string name="v1">Upper Fragment</string>
+    <string name="v2">Lower Fragment</string>
+</resources>
