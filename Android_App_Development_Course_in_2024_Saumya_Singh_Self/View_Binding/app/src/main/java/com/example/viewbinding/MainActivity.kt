@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnSignUp.setOnClickListener {
             val name = binding.etName.text.toString()
             val mail = binding.etMail.text.toString()
-            if (name.isEmpty() && mail.isEmpty()) {
+            if (name.isEmpty() || mail.isEmpty()) {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
             } else {
                 if (binding.checkBox.isChecked) {
