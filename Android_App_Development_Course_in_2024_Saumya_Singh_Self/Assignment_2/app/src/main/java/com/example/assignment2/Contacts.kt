@@ -1,3 +1,6 @@
 package com.example.assignment2
 
-data class Contacts(val name: String, val number: String) {}
+data class Contacts @JvmOverloads constructor(
+    val name: String = "",
+    val number: String = ""
+) {}
