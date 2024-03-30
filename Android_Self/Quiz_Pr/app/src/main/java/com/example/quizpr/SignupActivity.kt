@@ -60,12 +60,20 @@ class SignupActivity : AppCompatActivity() {
                                         )
                                         finish()
                                     } else {
+                                        dialog.dismiss()
+                                        auth.currentUser?.delete()
                                         Toast.makeText(
                                             this@SignupActivity,
                                             dbTask.exception?.message,
                                             Toast.LENGTH_SHORT
                                         ).show()
                                     }
+                                }.addOnFailureListener { it1 ->
+                                    dialog.dismiss()
+                                    auth.currentUser?.delete()
+                                    Toast.makeText(
+                                        this@SignupActivity, it1.message, Toast.LENGTH_SHORT
+                                    ).show()
                                 }
                         }
                     } else {
