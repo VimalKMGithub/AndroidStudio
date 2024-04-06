@@ -30,12 +30,15 @@ class WalletFragment : Fragment() {
                 val payPal = binding.emailBox.text.toString()
                 val request = WithdrawRequest(payPal, user.name)
                 if (uid != null) {
-                    database.collection("withdraws").document(uid).set(request).addOnSuccessListener {
-                        Toast.makeText(context, "Request sent successfully.", Toast.LENGTH_SHORT).show()
-                    }
+                    database.collection("withdraws").document(uid).set(request)
+                        .addOnSuccessListener {
+                            Toast.makeText(
+                                context, "Request sent successfully...", Toast.LENGTH_SHORT
+                            ).show()
+                        }
                 }
             } else {
-                Toast.makeText(context, "You need more coins to withdraw.", Toast.LENGTH_SHORT)
+                Toast.makeText(context, "You need more coins to withdraw...", Toast.LENGTH_SHORT)
                     .show()
             }
         }

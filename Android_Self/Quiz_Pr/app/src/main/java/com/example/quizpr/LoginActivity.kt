@@ -31,14 +31,12 @@ class LoginActivity : AppCompatActivity() {
         binding.submitBtn.setOnClickListener {
             val email = binding.emailBox.text.toString().trim()
             val pass = binding.passwordBox.text.toString()
-            if (email.isEmpty() || pass.isEmpty()) {
-                Toast.makeText(
-                    this@LoginActivity, "Fill all fields...", Toast.LENGTH_SHORT
-                ).show()
+            if (email.isEmpty()) {
+                binding.emailBox.error = "Enter email..."
             } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                Toast.makeText(
-                    this@LoginActivity, "Enter a valid email...", Toast.LENGTH_SHORT
-                ).show()
+                binding.emailBox.error = "Enter a valid email..."
+            } else if (pass.isEmpty()) {
+                binding.passwordBox.error = "Enter password..."
             } else {
                 dialog.show()
                 auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener { task ->
@@ -48,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
                         finish()
                     } else {
                         Toast.makeText(
-                            this@LoginActivity, task.exception?.message, Toast.LENGTH_SHORT
+                            this@LoginActivity, "Failed try again...", Toast.LENGTH_SHORT
                         ).show()
                     }
                 }
@@ -57,13 +55,9 @@ class LoginActivity : AppCompatActivity() {
         binding.resetPasswd.setOnClickListener {
             val email = binding.emailBox.text.toString().trim()
             if (email.isEmpty()) {
-                Toast.makeText(
-                    this@LoginActivity, "Enter an email...", Toast.LENGTH_SHORT
-                ).show()
+                binding.emailBox.error = "Enter email..."
             } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                Toast.makeText(
-                    this@LoginActivity, "Enter a valid email...", Toast.LENGTH_SHORT
-                ).show()
+                binding.emailBox.error = "Enter a valid email..."
             } else {
                 firestore.collection("users").whereEqualTo("email", email).get()
                     .addOnSuccessListener { documents ->
@@ -78,7 +72,7 @@ class LoginActivity : AppCompatActivity() {
                                 } else {
                                     Toast.makeText(
                                         this@LoginActivity,
-                                        task.exception?.message,
+                                        "Failed try again...",
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 }
@@ -86,9 +80,7 @@ class LoginActivity : AppCompatActivity() {
                         } else {
                             dialog.dismiss()
                             Toast.makeText(
-                                this@LoginActivity,
-                                "Email not registered sign up...",
-                                Toast.LENGTH_SHORT
+                                this@LoginActivity, "Failed try again...", Toast.LENGTH_SHORT
                             ).show()
                         }
                     }

@@ -29,14 +29,14 @@ class SignupActivity : AppCompatActivity() {
             val pass = binding.passwordBox.text.toString()
             val name = binding.nameBox.text.toString()
             val referCode = binding.referBox.text.toString()
-            if (email.isEmpty() || pass.isEmpty() || name.isEmpty()) {
-                Toast.makeText(
-                    this@SignupActivity, "Must fill email, pass & name...", Toast.LENGTH_SHORT
-                ).show()
+            if (name.isEmpty()) {
+                binding.nameBox.error = "Enter name..."
+            } else if (email.isEmpty()) {
+                binding.emailBox.error = "Enter email..."
             } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                Toast.makeText(
-                    this@SignupActivity, "Enter a valid email...", Toast.LENGTH_SHORT
-                ).show()
+                binding.emailBox.error = "Enter a valid email..."
+            } else if (pass.isEmpty()) {
+                binding.passwordBox.error = "Enter password..."
             } else {
                 val user = User(
                     name,
@@ -64,22 +64,24 @@ class SignupActivity : AppCompatActivity() {
                                         auth.currentUser?.delete()
                                         Toast.makeText(
                                             this@SignupActivity,
-                                            dbTask.exception?.message,
+                                            "Failed try again...",
                                             Toast.LENGTH_SHORT
                                         ).show()
                                     }
-                                }.addOnFailureListener { it1 ->
+                                }.addOnFailureListener {
                                     dialog.dismiss()
                                     auth.currentUser?.delete()
                                     Toast.makeText(
-                                        this@SignupActivity, it1.message, Toast.LENGTH_SHORT
+                                        this@SignupActivity,
+                                        "Failed try again...",
+                                        Toast.LENGTH_SHORT
                                     ).show()
                                 }
                         }
                     } else {
                         dialog.dismiss()
                         Toast.makeText(
-                            this@SignupActivity, task.exception?.message, Toast.LENGTH_SHORT
+                            this@SignupActivity, "Failed try again...", Toast.LENGTH_SHORT
                         ).show()
                     }
                 }
