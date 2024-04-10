@@ -2,6 +2,7 @@ package com.example.quizpr
 
 import android.app.ProgressDialog
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
@@ -90,6 +91,16 @@ class SignupActivity : AppCompatActivity() {
         binding.loginBtn.setOnClickListener {
             startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
             finish()
+        }
+        binding.policy.setOnClickListener {
+            Toast.makeText(
+                this@SignupActivity, "Opening browser...", Toast.LENGTH_SHORT
+            ).show()
+            val intent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://vimalkmgithub.github.io/QuizzerAppPrivacyPolicy/")
+            )
+            startActivity(intent)
         }
     }
 }
