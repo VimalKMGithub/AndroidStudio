@@ -34,10 +34,20 @@ class MainActivity : AppCompatActivity() {
             toast.duration = Toast.LENGTH_LONG
             toast.setView(layout)
             toast.show()
+
+
+//            val vg = findViewById<ViewGroup>(R.id.my_viewgroup)
+//            val layout = layoutInflater.inflate(R.layout.custom_toast, vg)
+//            val tv = layout.findViewById<TextView>(R.id.custom_toast_message)
+//            "My Message".also { tv.text = it }
+//            val toast = Toast(applicationContext)
+//            toast.duration = Toast.LENGTH_SHORT
+//            toast.view = layout
+//            toast.show()
         }
 
         val bnv = findViewById<BottomNavigationView>(R.id.bnView)
-        bnv.selectedItemId=R.id.home
+        bnv.selectedItemId = R.id.home
         bnv.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.settings -> {
