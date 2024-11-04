@@ -7,7 +7,9 @@ import android.database.sqlite.SQLiteOpenHelper
 class SQLLiteDBHelper(context:Context,factory:SQLiteDatabase.CursorFactory?):SQLiteOpenHelper(context,DATABASE_NAME,factory,DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase?) {
         val query=("CREATE TABLE "+TABLE_NAME+" ("+ID_COL+" INTEGER PrIMARY KEY,"+NAME_COL+" TEXT,"+AGE_COL+" TEXT"+")")
-        db.execSQL(query)
+        if (db != null) {
+            db.execSQL(query)
+        }
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {

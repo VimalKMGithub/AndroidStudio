@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/textTeamA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team A" />
+
+    <TextView
+        android:id="@+id/textTeamB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team B" />
+
+    <TextView
+        android:id="@+id/textMatchDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Match Date" />
+
+    <TextView
+        android:id="@+id/textVenue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Venue" />
+</LinearLayout>
